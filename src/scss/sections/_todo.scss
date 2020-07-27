@@ -1,0 +1,119 @@
+.todo {
+
+    .todo-container {
+        width: 55%;
+        padding-bottom: 40px;
+        border-radius: 30px;
+        margin: 0 auto;
+        background-color: $white;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    .todo-topsection {
+        padding: 40px 20px;
+        background-color: $pink;
+        box-sizing: border-box;
+
+        input {
+            width: 100%;
+            padding: 10px 20px;
+            border-style: none;
+            border-radius: 10px;
+            box-sizing: border-box;
+            outline: none;
+        }
+    }
+
+    h2 {
+        padding-bottom: 10px;
+        @include textcharacteristics($white, 20px, 800, uppercase);
+    }
+
+    li {
+        width: 100%;
+        padding: 10px 0;
+        border-bottom: 1px solid $secondaryColor;
+        @include flex(nowrap, row, flex-start, center, center );
+
+        & > input { width: 10%; }
+
+        form {
+            width: 70%;
+
+            input { 
+                width: 100%;
+                padding: 10px 20px;
+                border-style: none;
+                box-sizing: border-box;
+            }
+        }
+    }
+
+    h3 { 
+        width: 70%;
+        padding: 0 20px;
+        text-transform: uppercase;
+        font-size: 13px;
+    }
+
+    .edit {
+        display: block;
+        width: 25px;
+        height: 25px;
+        padding-top: 4px;
+        border-radius: 5px;
+        margin: 3px;
+        @include flex(nowrap, row, center, center, center );
+        cursor: pointer;
+        transition: 0.2s ease-in-out;
+
+        &::before {
+            content: "\f044";
+            font-family: "fontAwesome";
+            text-indent: 0;
+            font-size: 20px;
+            color: #000;
+            transition: 0.2s ease-in-out;
+        }
+
+        &:hover {
+            background-color: red;
+            &::before {
+                color: $white;
+            }
+        }
+    }
+
+    .delete {
+        display: block;
+        width: 25px;
+        height: 29px;
+        border-radius: 5px;
+        margin: 3px;
+        @include flex(nowrap, row, center, center, center );
+        cursor: pointer;
+        transition: 0.2s ease-in-out;
+
+        &::before {
+            content: "\f1f8";
+            font-family: "fontAwesome";
+            text-indent: 0;
+            font-size: 20px;
+            color: #000;
+            transition: 0.2s ease-in-out;
+        }
+
+        &:hover {
+            background-color: red;
+            &::before {
+                color: $white;
+            }
+        }
+    }
+
+    .todo-controllers {
+        width: 20%;
+        @include flex(wrap, row, center, center, center );
+    }
+}
